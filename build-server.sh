@@ -4,6 +4,7 @@ REPODIR=~/dev/modern-fullstack-subproj/minimal-express-server
 
 DESTDIR=~/dev/modern-fullstack-subproj/app
 
+npm i
 
 if [ -d "$DESTDIR" ]; then
   rm -rf $DESTDIR
