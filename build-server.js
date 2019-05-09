@@ -1,10 +1,10 @@
+// dependencies for this script
+execSync('npm i fs-extra rimraf', {stdio:[0,1,2]})
+
 const path = require('path')
 const fs = require('fs-extra')
 const rimraf = require('rimraf')
 const execSync = require('child_process').execSync
-
-// dependencies for this script
-execSync('npm i fs-extra rimraf', {stdio:[0,1,2]})
 
 // final path for app
 const appPath = path.normalize(`${__dirname}/../app`)
