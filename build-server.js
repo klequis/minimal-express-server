@@ -12,39 +12,18 @@ if (fs.existsSync(appPath)) {
   rimraf.sync(appPath, {}, function () { console.log("done"); });
 }
 
-// make empty app dir for new build
-fs.mkdirSync(`${appPath}`)
+// dependencies for this script
+execSync('npm i fs-extra rimraf', {stdio:[0,1,2]})
 
 // npm i for repo
-// https://nodejs.org/api/child_process.html#child_process_options_stdio
+// see: https://nodejs.org/api/child_process.html#child_process_options_stdio
 execSync('npm i', {stdio:[0,1,2]})
 
 // build app
 execSync('npm run build', {stdio:[0,1,2]})
 
 // move dist files to ../app
-
-moveBy(`${$PWD}/dist`, appPath)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+fs.move(`${__dirname}/dist`, appPath)
 
 function l(msg, value) {
   if (value === undefined) {
