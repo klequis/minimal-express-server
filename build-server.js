@@ -3,17 +3,16 @@ const fs = require('fs-extra')
 const rimraf = require('rimraf')
 const execSync = require('child_process').execSync
 
+// dependencies for this script
+execSync('npm i fs-extra rimraf', {stdio:[0,1,2]})
+
 // final path for app
 const appPath = path.normalize(`${__dirname}/../app`)
-
 
 // remove ../app it it already exists
 if (fs.existsSync(appPath)) {
   rimraf.sync(appPath, {}, function () { console.log("done"); });
 }
-
-// dependencies for this script
-execSync('npm i fs-extra rimraf', {stdio:[0,1,2]})
 
 // npm i for repo
 // see: https://nodejs.org/api/child_process.html#child_process_options_stdio
