@@ -1,11 +1,5 @@
-/*
-  - use fs-extra it has a convenient 'move' method whcih native Node 'fs' does not.
-  - use rimraf to delete a non-empty directory which can be done with Node but not as easily.
-*/
-
-const cp = require('child_process')
-cp.execSync('npm i -D fs-extra rimraf')
-
+// dependencies for this script
+execSync('npm i fs-extra rimraf', {stdio:[0,1,2]})
 
 const path = require('path')
 const fs = require('fs-extra')
