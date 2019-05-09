@@ -1,16 +1,23 @@
 #!/bin/bash
 
-REPODIR=~/dev/modern-fullstack-subproj/minimal-express-server
 
-DESTDIR=~/dev/modern-fullstack-subproj/app
 
-npm i
+REPODIR=$PWD
 
-if [ -d "$DESTDIR" ]; then
-  rm -rf $DESTDIR
-fi
+# DESTDIR=~/dev/modern-fullstack-subproj/app
 
-mkdir $DESTDIR
 
-npm run build
-mv $REPODIR/dist/* $DESTDIR
+DESTDIR='.'
+echo ${DESTDIR}
+
+
+# npm i
+
+# if [ -d "$DESTDIR" ]; then
+  # rm -rf $DESTDIR
+# fi
+
+# mkdir $DESTDIR
+
+# npm run build
+# mv $REPODIR/dist/* $DESTDIR
