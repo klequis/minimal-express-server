@@ -13,4 +13,3 @@ mkdir $DESTDIR
 
 npm run build
 mv $REPODIR/dist/* $DESTDIR
-# mv /home/klequis/dev/modern-fullstack-subproj/minimal-express-server/dist/* ../../app/
